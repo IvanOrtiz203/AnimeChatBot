@@ -1,27 +1,32 @@
 import { useState } from 'react';
 import './login.css';
 
-function Login(){
-    const [showPassword, setShowPassword] = useState(false);
+function Signup(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
     const togglePassword = () => {
         setShowPassword(!showPassword);
     };
 
-    const handleLogin = () => {
-        if (email && password){
-            console.log('Login successful! Moving to next page...');
-            // TODO: Add navigation to next page here
-        }else{
-            alert('Please enter both email and password.');
+    const handleSignup = () => {
+        if (email && password && confirmPassword) {
+            if (password === confirmPassword) {
+                console.log('Signup successful!', email);
+                // TODO: Add signup logic here
+            } else {
+                alert('Passwords do not match!');
+            }
+        } else {
+            alert('Please fill in all fields');
         }
     };
 
     return(
         <div className="login-container">
-            <h1>Login Page</h1>
+            <h1>Sign Up</h1>
             <input
                 type="email" 
                 placeholder="Email"
@@ -43,12 +48,19 @@ function Login(){
                     {showPassword ? "Hide" : "Show"}
                 </button>
             </div>
+
+            <input
+                type="password" 
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+            />
             
-            <button onClick={handleLogin} className="login-btn">
-                Login
+            <button onClick={handleSignup} className="signup-btn">
+                Sign Up
             </button>
         </div>
     );
 }
 
-export default Login;
+export default Signup;
