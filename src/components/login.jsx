@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './login.css';
 
-function Login(){
+function Login({ onLoginSuccess }){
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,8 +12,8 @@ function Login(){
 
     const handleLogin = () => {
         if (email && password){
-            console.log('Login successful! Moving to next page...');
-            // TODO: Add navigation to next page here
+            console.log('Login successful! Moving to MainPage...');
+            onLoginSuccess(); // Navigate to MainPage
         }else{
             alert('Please enter both email and password.');
         }

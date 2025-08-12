@@ -1,0 +1,123 @@
+/* MainPage styles */
+.main_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.welcome_container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.bot-greeting {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.bot-description {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    background-color: #ffffff;
+}
+
+.user-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Theme Styles for MainPage */
+.main_page.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.main_page.dark-theme .bot-greeting {
+    color: #ffffff;
+}
+
+.main_page.dark-theme .bot-description {
+    color: #cccccc;
+}
+
+.main_page.dark-theme .user-input {
+    background-color: #333333;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+.main_page.dark-theme .user-input:focus {
+    border-color: #007bff;
+}
+
+.main_page.dark-theme .user-input::placeholder {
+    color: #aaaaaa;
+}
+
+/* Light Theme Styles for MainPage */
+.main_page.light-theme {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.main_page.light-theme .bot-greeting {
+    color: #333333;
+}
+
+.main_page.light-theme .bot-description {
+    color: #666666;
+}
+
+.main_page.light-theme .user-input {
+    background-color: #ffffff;
+    border-color: #dddddd;
+    color: #333333;
+}
+
+.main_page.light-theme .user-input::placeholder {
+    color: #999999;
+}
