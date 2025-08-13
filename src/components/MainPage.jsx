@@ -1,12 +1,12 @@
 import {useState} from 'react';
 import './MainPage.css';
 
-function MainPage({ darkMode }) {
+function MainPage({ darkMode, onStartChat }) {
     const [userInput, setUserInput] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
         if(userInput.trim()){
-            console.log('User prompt:', userInput);
+            onStartChat(userInput);
         }
     }
     return(
